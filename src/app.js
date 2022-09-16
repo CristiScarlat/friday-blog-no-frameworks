@@ -6,8 +6,6 @@ root.append(nav);
 button.innerText = "Click me"
 root.append(button)
 
-console.dir(button)
-
 
 window.onload = async () => {
     try{
