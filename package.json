@@ -1,0 +1,31 @@
+{
+  "name": "fitness-app",
+  "version": "1.0.0",
+  "description": "Web app for fitness",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristiScarlat/friday-blog-no-frameworks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristiScarlat/friday-blog-no-frameworks/issues"
+  },
+  "homepage": "https://github.com/CristiScarlat/friday-blog-no-frameworks#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-dev-server": "^4.11.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  }
+}
