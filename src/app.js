@@ -3,11 +3,6 @@ import { getAllExercises } from './services/api';
 
 const root = document.getElementById('root');
 root.append(nav);
-button.innerText = "Click me"
-root.append(button)
-
-console.dir(button)
-
 
 window.onload = async () => {
     try{
