@@ -4,7 +4,7 @@ const nav = document.createElement('nav');
 nav.className = "header-wrapper";
 const link = document.createElement('a');
 link.href = "about";
-link.innerText = "Google";
+link.innerText = "About";
 
 const button = document.createElement('button');
 console.dir(button)

@@ -13,4 +13,16 @@ const getAllExercises = async () => {
     return await axiosInstance.get('');
 }
 
-export { getAllExercises }
+const getBodyParts = async () => {
+    return await axiosInstance.get('/bodyPartList');
+}
+
+const getTargetList = async () => {
+    return await axiosInstance.get('/targetList');
+}
+
+const getEquipmentList = async () => {
+    return await axiosInstance.get('/equipmentList');
+}
+
+export { getAllExercises, getBodyParts, getTargetList, getEquipmentList }
