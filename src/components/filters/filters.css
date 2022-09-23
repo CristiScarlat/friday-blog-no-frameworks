@@ -1,0 +1,7 @@
+.filters-container {
+    padding: 1rem;
+}
+
+.filters-container select {
+    margin: 0 0.5rem;
+}
