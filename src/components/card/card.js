@@ -1,7 +1,6 @@
 import './card.css';
 
 const card = (data) => {
-    console.log(data)
     const container = document.createElement('div');
     container.className = "card-container";
     const name = document.createElement('h2');

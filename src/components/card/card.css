@@ -3,4 +3,5 @@
     border-radius: 5px;
     padding: 1rem;
     width: fit-content;
+    max-width: 20rem;
 }

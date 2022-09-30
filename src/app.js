@@ -1,8 +1,8 @@
 import './index.css';
 import { nav } from './components/header/header';
 import filters from './components/filters/filters';
-import card from './components/card/card';
 import { getAllExercises, getBodyParts, getTargetList, getEquipmentList  } from './services/api';
+import paginatedList from './components/paginatedList/paginatedList';
 
 
 let filtersData = [];
@@ -11,16 +11,14 @@ let exercises = [];
 const root = document.getElementById('root');
 root.append(nav)
 
-
-
 const buildFilters = () => {
     const filterContainer = filters(filtersData);
     root.appendChild(filterContainer);
 }
 
 const buildExercisesList = () => {
-    const cardComponent = card(exercises[89])
-    root.appendChild(cardComponent);
+    const cardsList = paginatedList(exercises, 2);
+    root.appendChild(cardsList);
 }
 
 window.onload = async () => {
