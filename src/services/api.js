@@ -4,7 +4,7 @@ import axios from 'axios';
 const axiosInstance = axios.create({
     baseURL: 'https://exercisedb.p.rapidapi.com/exercises',
     headers: {
-        'X-RapidAPI-Key': '0a4f552ee7msha809798f0387267p1f6839jsnef0c27a56717',
+        'X-RapidAPI-Key': process.env.RAPID_API_KEY,
         'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
       }
 })
