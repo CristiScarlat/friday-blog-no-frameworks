@@ -1,12 +1,16 @@
 import './filters.css';
 
 const listNames = ['Body parts', 'Target muscles', 'Equipment'];
+const filterType = ['bodyPart', 'target', 'equipment'];
 
-const filters = (data) => {
+const filters = (data, onChange) => {
     const container = document.createElement('div');
     container.className = "filters-container";
     data.forEach((list, index) => {
         const select = document.createElement('select');
+        select.onchange = (e) => {
+            onChange(filterType[index], e.target.value)
+        }
         const opt = document.createElement('option');
         opt.value = null;
         opt.selected = true;

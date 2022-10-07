@@ -2,23 +2,40 @@ import './index.css';
 import { nav } from './components/header/header';
 import filters from './components/filters/filters';
 import { getAllExercises, getBodyParts, getTargetList, getEquipmentList  } from './services/api';
+import { filterList } from './services/utils';
 import paginatedList from './components/paginatedList/paginatedList';
 
 
 let filtersData = [];
 let exercises = [];
+const filterTerms = {
+    bodyPart: null,
+    target: null,
+    equipment: null
+}
 
 const root = document.getElementById('root');
-root.append(nav)
+const listContainer = document.createElement('div');
+root.append(nav);
+
+const handleFiltering = (key, value) => {
+    filterTerms[key] = value;
+    const filteredList = filterList(exercises, filterTerms);
+    buildExercisesList(filteredList);
+}
 
 const buildFilters = () => {
-    const filterContainer = filters(filtersData);
+    const filterContainer = filters(filtersData, handleFiltering);
     root.appendChild(filterContainer);
 }
 
-const buildExercisesList = () => {
-    const cardsList = paginatedList(exercises, 2);
-    root.appendChild(cardsList);
+const buildExercisesList = (list) => {
+    const cardsList = paginatedList(list, 10);
+    if(listContainer.innerHTML){
+        listContainer.innerHTML = null
+    }
+    listContainer.append(cardsList);
+    root.appendChild(listContainer);
 }
 
 window.onload = async () => {
@@ -51,5 +68,5 @@ window.onload = async () => {
         }
     }
 
-    buildExercisesList();
+    buildExercisesList(exercises);
 }
